@@ -12,5 +12,7 @@ class Veiculo(models.Model):
     cor = models.ForeignKey(Cor, on_delete=models.CASCADE)
     acessorios = models.ManyToManyField(Acessorio, blank=True)
 
+    imagem = models.ImageField(upload_to="veiculos/", null=True, blank=True)
+
     def __str__(self):
         return f"{self.id} - {self.modelo} {self.cor} {self.ano}"
